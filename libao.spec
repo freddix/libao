@@ -1,12 +1,12 @@
 Summary:	Cross Platform Audio Output Library
 Name:		libao
-Version:	1.1.0
-Release:	3
+Version:	1.2.0
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/ao/%{name}-%{version}.tar.gz
-# Source0-md5:	2b2508c29bc97e4dc218fa162cf883c8
+# Source0-md5:	9f5dd20d7e95fd0dd72df5353829f097
 URL:		http://www.xiph.org/ao/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
