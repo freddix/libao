@@ -1,7 +1,7 @@
 Summary:	Cross Platform Audio Output Library
 Name:		libao
 Version:	1.2.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		Libraries
@@ -53,7 +53,7 @@ Plugins for AO Library.
 	--disable-esd		\
 	--disable-nas		\
 	--disable-static	\
-	--enable-alsa
+	--enable-alsa-mmap
 %{__make}
 
 %install
@@ -63,7 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # dlopened by *.so
-rm -f $RPM_BUILD_ROOT%{_libdir}/ao/plugins-4/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/ao/plugins-4/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -84,7 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/*{html,css,c}
 %attr(755,root,root) %{_libdir}/libao.so
-%{_libdir}/libao.la
 %{_includedir}/ao
 %{_aclocaldir}/ao.m4
 %{_pkgconfigdir}/*.pc
